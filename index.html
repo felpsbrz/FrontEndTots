@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Cliente</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="headerbg"></div>
+    <div class="bgcontainer">
+<div class="container">
+    <div class="form-header"><img src="logo.jpg" alt="">    <h1>Formulário de Cadastro de Cliente</h1>
+</div>
+
+       <form id="clienteForm">
+<div class="strong"><p>Empresa</p></div>
+      <div class="card">
+            <div class="left">
+               
+  <label for="codigo">Código:</label><input type="text" id="codigo" name="codigo" >
+  <label for="loja">Loja:</label><input type="text" id="loja" name="loja" >  
+  <label for="abertura">Abertura:</label><input type="date" id="abertura" name="abertura">
+<label for="tipo">Tipo (F/J):</label><input type="text" id="tipo" name="tipo" maxlength="1" size="10" >
+            </div>
+
+
+                     <div class="right">
+
+               <label for="razao">Razão Social:</label><input type="text" id="razao" name="razao" >
+               <label for="nomeFantasia">Nome Fantasia:</label><input type="text" id="nomeFantasia" name="nomeFantasia" >
+                <label for="cnpj">CNPJ:</label> <input type="text" id="cnpj" name="cnpj">
+                <label for="finalidade">Finalidade:</label><input type="text" id="finalidade" name="finalidade" maxlength="1" >
+            </div>
+
+               
+
+
+
+  
+             
+    
+          
+
+               
+     
+               
+    
+        
+       
+    
+</div>
+ <br>
+<div class="strong"><p>Endereço</p></div>
+        <div class="card">
+                     <div class="left">   
+            
+                <label for="cep">CEP:</label>
+                <input type="text" id="cep" name="cep">
+            
+            
+            
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco" size="50">
+            
+            
+        
+                <label for="bairro">Bairro:</label>
+                <input type="text" id="bairro" name="bairro">
+                <label for="invisible"> </label>
+         <label  style="height: 10pxpx;margin-top: 10px;"> </label>
+            
+        </div>
+                    <div class="right">
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" name="cidade">
+            
+    
+            
+                <label for="codMunicipio">Código do Município:</label>
+                <input type="text" id="codMunicipio" name="codMunicipio">
+            
+        
+            
+                <label for="estado">Estado (UF):</label>
+                <input type="text" id="estado" name="estado" maxlength="2" size="2">
+            
+            
+        
+                <label for="pais">País (Código):</label>
+                <input type="text" id="pais" name="pais">
+            </div>
+        
+  </div>
+
+        <br>
+<div class="strong"><p>Contato</p></div>
+            
+    <div class="card">
+           <div class="left">
+                <label for="contato"></label>
+                <input type="text" id="contato" name="contato" hidden>
+       
+            
+        
+                <label for="ddd">DDD:</label>
+                <input type="text" id="ddd" name="ddd" maxlength="3" size="3">
+            
+
+            
+                <label for="telefone">Telefone:</label>
+                <input type="text" id="telefone" name="telefone">
+                        </div>
+            
+            <div class="right">
+        
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" size="40">
+            
+            
+            
+                <label for="homepage">Homepage:</label>
+                <input type="url" id="homepage" name="homepage" size="40">
+                       
+ 
+            
+        </div>
+        
+    </div>
+        <br>
+        
+        <button type="submit" >Cadastrar</button>
+        <button type="reset" id="reset">Limpar</button>
+
+    </form>
+           
+    </div>
+</div>
+<script src="engine.js" defer></script>
+
+    </body> <div class="footerbg"><div></div></div>
+    
+</html>
