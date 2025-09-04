@@ -1,2 +1,3 @@
 Print Front End:
-https://github.com/felpsbrz/FrontEndTots/blob/main/print.png?raw=true
+ <img align="center" src="https://github.com/felpsbrz/FrontEndTots/blob/main/print.png?raw=true" />
+
