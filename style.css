@@ -1,193 +1,151 @@
-*{
+* {
     margin: 0;
     list-style: none;
     box-sizing: border-box;
 }
-body{
-    background: rgba(0, 0, 0, 0.05) ;
-
-    width: 100vw;
-display: flex;
-flex-direction: column;
-align-items: center;
-position: relative; 
-
+body {
+    background: rgba(0, 0, 0, 0.05);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
 }
-.bgcontainer{
-        width: 60rem;
-height: 950px;
-position: relative;
-padding: 10px 10px 10px 10px;
 
-background-color: white;
-border-radius: 10px;
-margin-top: 20px;
-box-shadow:  rgba(99, 46, 221,0.1) 10px -12px;
+.bgcontainer {
+    width: 100%;
+    max-width: 60rem; /* antes era fixo */
+    height: auto; /* deixa crescer conforme o conteúdo */
+    position: relative;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: rgba(99, 46, 221, 0.1) 10px -12px;
 }
-.container{
 
-position: relative;
-margin-left: 50px;
-    width: 90%;
-height: 700px;
-
-border-radius: 10px;
-margin-top: 10px;
-
+.container {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 90%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
 }
-.form-header{
+
+.form-header {
     border-bottom: 1px solid black;
     padding-bottom: 10px;
     margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap; /* permite quebra no mobile */
+    align-items: center;
+    gap: 10px;
 }
-.card{
-margin-top: 0px;
-padding: 10px;
 
- border-radius: 0px 0px 5px 5px;
- width: 100%;
-    height: 100%;
-  display: flex;
+.form-header img {
+    max-width: 100%;
+    height: auto;
+}
+
+.card {
+    margin-top: 0px;
+    padding: 10px;
+    border-radius: 0px 0px 5px 5px;
+    width: 100%;
+    display: flex;
     flex-direction: row;
-    border: 1px solid rgb(99, 46, 221) ;
-
+    border: 1px solid rgb(99, 46, 221);
+    gap: 10px;
+    flex-wrap: wrap; /* permite adaptação em telas menores */
 }
 
-.card .left {
-    margin-left: 10px;
-      display: flex;
-flex-direction: column;
-width: 30%;
-justify-content:space-around;
-}
-.card .left div{
-  display: flex;
-flex-direction: row;
-justify-content:end;
-gap: 20px;
-
-}
+.card .left,
 .card .right {
-    margin-left: 10px;
-      display: flex;
-flex-direction: column;
-width: 70%;
-justify-content:space-around;
-
-    
-    
-   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex: 1 1 45%; /* ocupa 45% em telas médias */
+    min-width: 250px; /* garante largura mínima */
 }
-button{
-    background: rgb(99, 46, 221) ;
-    color:  white;
+
+.card input {
+    height: 30px;
+    max-width: 100%; /* evita quebra */
+}
+
+button {
+    background: rgb(99, 46, 221);
+    color: white;
     height: 60px;
     width: 65%;
     border-radius: 10px;
-
-border: none;
-margin-left: 6px;
-
+    border: none;
+    margin-left: 6px;
 }
-#reset{
-    background: rgb(199, 176, 252) ;
-    color:  white;
+
+#reset {
+    background: rgb(199, 176, 252);
+    color: white;
     height: 60px;
     width: 32%;
-    
-
 }
-.card input{
-    height: 30px;
-}
-.card .invisible{
-    border: 0px;
-    cursor: none;
-
-}
-.headerbg{
+.strong{ 
+    position: relative; 
+    background-color: rgb(99, 46, 221); 
+    border: 1px solid black; margin-top: -8px;
+     width: 100%; 
+    color: white; text-transform: uppercase;
+     height: 40px; 
+    border-radius: 8px 8px 0px 0px; } 
+.strong p{ 
+margin-top: 10px;
+margin-left: 10px; 
+         }
+.headerbg {
     background-color: rgb(99, 46, 221);
     height: 150px;
-    position: absolute;
-    width: 1150px;
- transform: rotate(5deg);
- margin-left: 90%;
- margin-top: -100px;
-
-
- 
-}
-.form-header
-{
-    display: flex;
-    columns: row;
-    color: rgb(33, 12, 152);
-   
-}
-.form-header p
-{
-    size: 1px;
-}
-.form-header h1{
-    margin-top: 30px;
-}
-.form-header img{
-    width: 200px;
-    height: 100px;
-}
-.footerbg {
-height: 750px;
-
-position: absolute;
-width: 100vw;
-
-}
-.footerbg div{
-        background-color: rgb(99, 46, 221);
-    height: 150px;
-width: 500px;
     position: fixed;
-
-
-    /* --- Alterações para o rodapé --- */
-
-    /* 1. Posiciona o elemento na parte de baixo da página */
-
-
-
-    /* 2. Rotaciona no sentido oposto ao do header */
-    transform: rotate(9deg); 
-  
-  bottom: -130px;        /* gruda no fundo da tela */
-  left: -50px;          /* começa na esquerda */
-
-
-  padding: 10px;
-
+    width: 100%;
+    max-width: 900px;
+    transform: rotate(9deg);
+    margin-left: 70%;
+    margin-right: 150px;
+    margin-top: -110px;
+    z-index: 5;
 }
-.strong{
-position: relative;
-background-color: rgb(99, 46, 221);
- border: 1px solid black;
 
-margin-top: -8px;
-width: 100%;
-
-color: white;
-text-transform: uppercase;
-height: 40px;
-border-radius: 8px 8px 0px 0px;
+.footerbg {
+    height: 750px;
+    position: absolute;
+    width: 100%;
 }
-.strong p{
-    margin-top: 10px;
-    margin-left: 10px;
+.footerbg div {
+    background-color: rgb(99, 46, 221);
+    height: 150px;
+    width: 100%;
+    max-width: 500px;
+    position: fixed;
+    transform: rotate(9deg);
+    bottom: -130px;
+    left: -50px;
+    padding: 10px;
 }
-.card strong h2{
 
-width: 60%;
-margin-left: 20px;
-margin-top: 3px;
-
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    .card {
+        flex-direction: column;
+    }
+    button, #reset {
+        width: 100%;
+        margin: 5px 0;
+    }
+    .form-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
- 
- 
