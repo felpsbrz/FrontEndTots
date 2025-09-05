@@ -52,7 +52,7 @@ body {
 
 .form-header img {
     max-width: 100%;
-    height: auto;
+   height: auto; 
 }
 
 .card {
@@ -119,13 +119,14 @@ margin-left: 10px;
 bottom: 0;
 top: -120px;
 right:-40px;
-    z-index: 5;
+    z-index: 1;
 }
 
 .footerbg {
-    height: 750px;
+    height: 100px;
     position: absolute;
     width: 100%;
+    z-index: 1;
 }
 .footerbg div {
     background-color: rgb(99, 46, 221);
