@@ -2,6 +2,7 @@
     margin: 0;
     list-style: none;
     box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 body {
     background: rgba(0, 0, 0, 0.05);
@@ -44,6 +45,9 @@ body {
     flex-wrap: wrap; /* permite quebra no mobile */
     align-items: center;
     gap: 10px;
+    text-transform: uppercase;
+    color: rgb(49, 116, 202);
+  
 }
 
 .form-header img {
@@ -112,9 +116,9 @@ margin-left: 10px;
     width: 100%;
     max-width: 900px;
     transform: rotate(9deg);
-    margin-left: 70%;
-    margin-right: 150px;
-    margin-top: -110px;
+bottom: 0;
+top: -120px;
+right:-40px;
     z-index: 5;
 }
 
