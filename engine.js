@@ -1,30 +1,41 @@
 // ================== Cadastrar Novo Cliente (POST) ==================
-document.getElementById('clienteForm')?.addEventListener('submit', event => {
+document.getElementById('clienteForm')?.addEventListener('submit', async event => {
   event.preventDefault();
   const form = document.getElementById('clienteForm');
   const formData = new FormData(form);
   const data = Object.fromEntries(formData.entries());
 
-  console.log('Enviando para a API:', data);
-
-  fetch('http://localhost:8080/api/clientes', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data)
-  })
-    .then(response => {
-      if (!response.ok) throw new Error('Erro na requisição: ' + response.statusText);
-      return response.json();
-    })
-    .then(clienteCriado => {
-      alert('Cliente cadastrado com sucesso! ID: ' + clienteCriado.id);
-      form.reset();
-    })
-    .catch(error => {
-      console.error('Erro ao cadastrar cliente:', error);
-      alert('Ocorreu um erro ao tentar cadastrar o cliente.');
+  try {
+    const response = await fetch('http://localhost:8080/api/clientes', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
     });
+
+    if (!response.ok) {
+      throw new Error(`Erro na requisição: ${response.status} - ${response.statusText}`);
+    }
+
+    const clienteCriado = await response.json();
+
+    // Verifica se a resposta tem um ID válido
+    if (!clienteCriado || typeof clienteCriado.id !== 'number') {
+      console.warn('Resposta inesperada:', clienteCriado);
+      alert('Cliente cadastrado, mas a resposta da API está incompleta.');
+      return;
+    }
+
+alert('Cliente cadastrado com sucesso! ID: ' + clienteCriado.id);
+form.reset();
+
+// Redireciona para painel.html após o alerta
+window.location.href = 'painel.html';
+
+  } catch (error) {
+ 
+  }
 });
+
 // ================== Utilitários ==================
 function getUserIdFromUrl() {
   const params = new URLSearchParams(window.location.search);
@@ -91,9 +102,11 @@ window.addEventListener('DOMContentLoaded', () => {
     window.location.href = `userInfo.html?id=${id}`;
   });
 
-  carregarCliente();
+  // Só carrega cliente se houver parâmetro ?id= na URL
+  if (window.location.search.includes('id=')) {
+    carregarCliente();
+  }
 });
-
 // ================== Buscar por Nome Fantasia ==================
 function buscarClientePorNome() {
   const nome = document.getElementById('nomeFantasiaInput')?.value;
