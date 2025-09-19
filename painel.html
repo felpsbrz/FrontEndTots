@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel do Sistema</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="headerbg"></div>
+  <div class="bgcontainer">
+    <div class="container">
+      <div class="form-header">
+        <img src="logo.jpg" alt="Logo">
+        <h1>Painel de Controle</h1>
+      </div>
+
+<div class="card" style="display: flex; gap: 10px; padding: 30px;">
+  <button 
+    onclick="window.location.href='insertinfo.html'" 
+    style="flex: 1; height: 60px; font-size: 16px; border: none; background-color: #28a745; color: white; border-radius: 4px;"
+  >
+    Inserir Registro
+  </button>
+
+  <button 
+    onclick="window.location.href='userInfo.html?id=1'" 
+    class="reset" 
+    style="flex: 1; height: 60px; font-size: 16px; border: none; background-color: #17a2b8; color: white; border-radius: 4px;"
+  >
+    Ver Registros
+  </button>
+
+  <button 
+    onclick="window.location.href='buscar.html'" 
+    class="reset" 
+    style="flex: 1; height: 60px; font-size: 16px; border: none; background-color: #007bff; color: white; border-radius: 4px;"
+  >
+    Busca Personalizada
+  </button>
+</div>
+    </div>
+  </div>
+</body>
+<div class="footerbg"><div></div></div>
+</html>
